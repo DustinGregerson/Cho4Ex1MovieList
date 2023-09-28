@@ -1,9 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 namespace Cho4Ex1MovieList.Models
 {
-    public class MoviesContext : DbContext
+    public class MovieContext : DbContext
     {
-        public MoviesContext(DbContextOptions<MoviesContext> options)
+
+        public MovieContext()
+        {
+
+        }
+        public MovieContext(DbContextOptions<MovieContext> options)
             :base(options) { }
         public DbSet<Movie> Movies { get; set; }
 
@@ -15,21 +20,21 @@ namespace Cho4Ex1MovieList.Models
                 MovieId = 1,
                 Name = "Casablanca",
                 Year = 1942,
-                rating = 5
+                Rating = 5
              },
              new Movie
              {
              MovieId = 2,
              Name = "Wonder Woman",
              Year = 2017,
-             rating = 3
+             Rating = 3
              },
              new Movie
              {
              MovieId = 3,
              Name = "Moonstruck",
              Year = 1988,
-             rating = 4
+             Rating = 4
              }
             );
         }
