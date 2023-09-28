@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cho4Ex1MovieList.Migrations
 {
     [DbContext(typeof(MovieContext))]
-    [Migration("20230927152823_initial")]
-    partial class initial
+    [Migration("20230928155315_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
