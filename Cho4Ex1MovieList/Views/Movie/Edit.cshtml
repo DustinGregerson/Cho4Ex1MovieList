@@ -24,13 +24,13 @@
 
     <div class="form-group">
         <label asp-for="GenreId">Genre</label>
-        <select asp-for="GenreId" class="form-control">
-        <option value="">select a genre</option>
-        @foreach (Genre g in ViewBag.Genres)
-        {
-           <option value="@g.GenreId">@g.Name</option> 
-        }
-        </select>
+            <select asp-for="GenreId" class="form-control">
+            <option value="">select a genre</option>
+            @foreach (Genre g in ViewBag.Genres)
+            {
+                <option value="@g.GenreId">@g.Name</option> 
+            }
+            </select>
     </div>
 
     <input type="hidden" asp-for="MovieId"/>

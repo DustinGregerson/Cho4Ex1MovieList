@@ -1,4 +1,5 @@
 using Cho4Ex1MovieList.Models;
+using Microsoft.AspNetCore.Mvc.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -10,6 +11,8 @@ builder.Services.AddControllersWithViews();
 //creates the connection between th
 var connectionString = builder.Configuration.GetConnectionString("MovieContext");
 builder.Services.AddDbContext<MovieContext>(m => m.UseSqlServer(connectionString));
+
+
 
 var app = builder.Build();
 
@@ -29,8 +32,15 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}/{slug?}");
+}
+);
 app.UseAuthorization();
+
 
 app.MapControllerRoute(
     name: "default",
